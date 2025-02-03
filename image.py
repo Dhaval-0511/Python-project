@@ -7,12 +7,12 @@ pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float
 pipe = pipe.to("cuda")  # Use GPU for faster generation
 
 # Define your prompt
-prompt = "A futuristic cityscape at sunset, highly detailed, cyberpunk style"
+prompt = input("give me promt for image generation : ")
 
 # Generate the image
 image = pipe(prompt).images[0]
 
 # Save the image
-image.save("generated_image.png")
+image.save(f"{prompt}.png")
 
 print("Image generated and saved as 'generated_image.png'")
